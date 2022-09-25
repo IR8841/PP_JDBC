@@ -15,17 +15,10 @@ public class Util {
             Driver driver = new com.mysql.cj.jdbc.Driver();
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return connection;
     }
-    public void stopConnection() {
-        try {
-            if (!getConnection().isClosed()) getConnection().close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
