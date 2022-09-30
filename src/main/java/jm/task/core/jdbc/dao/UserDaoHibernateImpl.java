@@ -25,6 +25,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
     }
 
@@ -37,6 +38,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
     }
 
@@ -49,6 +51,7 @@ public class UserDaoHibernateImpl implements UserDao {
             System.out.println("User с именем – " + name + " добавлен в базу данных");
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
     }
 
@@ -62,6 +65,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
 
     }
@@ -76,6 +80,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
         return list;
     }
@@ -89,6 +94,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+            sessionFactory.getCurrentSession().beginTransaction().rollback();
         }
     }
 }
